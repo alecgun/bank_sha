@@ -92,6 +92,5 @@ class SignUpVerifyPage extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }
