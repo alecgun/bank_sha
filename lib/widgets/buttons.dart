@@ -12,7 +12,7 @@ class CustomFilledButton extends StatelessWidget {
   const CustomFilledButton({
     Key? key,
     required this.title,
-    this.width = 0,
+    required this.width,
     this.height = 50,
     this.onPressed,
   });
