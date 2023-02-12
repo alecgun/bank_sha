@@ -3,8 +3,10 @@
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/widgets/buttons.dart';
 import 'package:bank_sha/widgets/contact_list.dart';
+import 'package:bank_sha/widgets/tips_list.dart';
 import 'package:bank_sha/widgets/transaction_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -28,6 +30,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           contactSection(),
+          tipsSection(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
@@ -284,7 +287,7 @@ class HomePage extends StatelessWidget {
               color: whiteClr,
               borderRadius: BorderRadius.circular(20),
             ),
-            padding: EdgeInsets.all(22),
+            padding: EdgeInsets.only(top: 22, left: 22, right: 22),
             child: Column(
               children: [
                 TransactionList(
@@ -374,6 +377,50 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget tipsSection() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 24),
+      margin: EdgeInsets.only(top: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Friendly Tips',
+            style: blackTS.copyWith(
+              fontSize: 16,
+              fontWeight: semibold,
+            ),
+          ),
+          SizedBox(
+            height: 14,
+          ),
+          StaggeredGrid.count(
+            crossAxisCount: 2,
+            crossAxisSpacing: 17,
+            mainAxisSpacing: 17,
+            children: [
+              TipsList(
+                  title: 'Best tips for using a credit card',
+                  imgUrl: 'assets/images/img_tips1.png'),
+              TipsList(
+                  title: 'Best tips for using a credit card',
+                  imgUrl: 'assets/images/img_tips1.png'),
+              TipsList(
+                  title: 'Best tips for using a credit card',
+                  imgUrl: 'assets/images/img_tips1.png'),
+              TipsList(
+                  title: 'Best tips for using a credit card',
+                  imgUrl: 'assets/images/img_tips1.png'),
+            ],
+          ),
+          SizedBox(
+            height: 30,
           ),
         ],
       ),

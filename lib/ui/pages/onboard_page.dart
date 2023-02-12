@@ -107,7 +107,7 @@ class _OnboardPageState extends State<OnboardPage> {
                             ),
                             CustomTextButton(
                               title: 'Sign In',
-                              width: 53,
+                              width: 60,
                               onPressed: () {
                                 Navigator.pushNamed(context, '/sign-in');
                               },

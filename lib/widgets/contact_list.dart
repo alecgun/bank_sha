@@ -30,6 +30,9 @@ class ContactList extends StatelessWidget {
               ppUrl,
               width: 45,
             ),
+            SizedBox(
+              height: 14,
+            ),
             Text(
               name,
               style: blackTS.copyWith(
