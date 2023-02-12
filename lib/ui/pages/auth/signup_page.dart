@@ -81,7 +81,7 @@ class SignUpPage extends StatelessWidget {
             title: 'Sign In',
             width: 52,
             onPressed: () {
-              Navigator.pushNamed(context, '/sign-in');
+              Navigator.popAndPushNamed(context, '/sign-in');
             },
           ),
         ],

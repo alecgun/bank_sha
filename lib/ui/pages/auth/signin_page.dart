@@ -81,8 +81,10 @@ class LoginPage extends StatelessWidget {
                 CustomFilledButton(
                   title: 'Sign In',
                   width: double.infinity,
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/pin');
+                  onPressed: () async {
+                    if (await Navigator.pushNamed(context, '/pin') == true) {
+                      Navigator.pushNamed(context, '/home');
+                    }
                   },
                 ),
               ],
@@ -95,7 +97,7 @@ class LoginPage extends StatelessWidget {
             title: 'Create New Account',
             width: 165,
             onPressed: () {
-              Navigator.pushNamed(context, '/sign-up');
+              Navigator.popAndPushNamed(context, '/sign-up');
             },
           ),
         ],
