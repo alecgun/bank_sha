@@ -1,4 +1,8 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/widgets/buttons.dart';
+import 'package:bank_sha/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
 class EditProfilePage extends StatelessWidget {
@@ -7,6 +11,7 @@ class EditProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: lighBgClr,
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
@@ -21,7 +26,48 @@ class EditProfilePage extends StatelessWidget {
         ),
       ),
       body: ListView(
-        children: [],
+        children: [
+          SizedBox(
+            height: 16,
+          ),
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.all(24),
+            padding: EdgeInsets.all(22),
+            decoration: BoxDecoration(
+              color: whiteClr,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              children: [
+                CustomFormField(title: 'Username'),
+                SizedBox(
+                  height: 16,
+                ),
+                CustomFormField(title: 'Full Name'),
+                SizedBox(
+                  height: 16,
+                ),
+                CustomFormField(title: 'Email Address'),
+                SizedBox(
+                  height: 16,
+                ),
+                CustomFormField(
+                  title: 'Password',
+                  obscureText: true,
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                CustomFilledButton(
+                  title: 'Update Now',
+                  width: double.infinity,
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
