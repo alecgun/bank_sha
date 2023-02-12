@@ -82,7 +82,7 @@ class LoginPage extends StatelessWidget {
                   title: 'Sign In',
                   width: double.infinity,
                   onPressed: () {
-                    Navigator.pushNamed(context, '/sign-in-pin');
+                    Navigator.pushNamed(context, '/pin');
                   },
                 ),
               ],
