@@ -38,7 +38,7 @@ class EditProfileSuccess extends StatelessWidget {
               height: 50,
             ),
             CustomFilledButton(
-              title: 'My Profile',
+              title: 'Continue',
               width: 183,
               onPressed: () {
                 Navigator.pop(context);
