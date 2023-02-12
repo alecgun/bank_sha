@@ -142,3 +142,42 @@ class CustomActivityButton extends StatelessWidget {
     );
   }
 }
+
+class ItemProfilePage extends StatelessWidget {
+  final String title;
+  final String iconUrl;
+  final VoidCallback? onTap;
+  const ItemProfilePage(
+      {Key? key, required this.title, required this.iconUrl, this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 8),
+        padding: EdgeInsets.all(8),
+        width: double.infinity,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Image.asset(
+              iconUrl,
+              width: 24,
+            ),
+            SizedBox(
+              width: 18,
+            ),
+            Text(
+              title,
+              style: blackTS.copyWith(
+                fontSize: 14,
+                fontWeight: semibold,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
