@@ -27,9 +27,6 @@ class EditProfilePage extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          SizedBox(
-            height: 16,
-          ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.all(24),
