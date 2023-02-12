@@ -21,10 +21,10 @@ class HomePage extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               children: [
-                profileSection(),
+                profileSection(context),
                 cardSection(),
                 accountLevelSection(),
-                activitySection(),
+                activitySection(context),
                 transactionSection(),
               ],
             ),
@@ -83,6 +83,65 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  Widget profileSection(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 40),
+      child: Row(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Howdy,',
+                style: greyTS.copyWith(fontSize: 16, fontWeight: regular),
+              ),
+              Text(
+                'shaynahan',
+                style: blackTS.copyWith(fontWeight: semibold, fontSize: 20),
+              ),
+            ],
+          ),
+          Spacer(),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, '/profile');
+            },
+            child: Column(
+              children: [
+                Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/ic_profpic.png'),
+                    ),
+                  ),
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      width: 16,
+                      height: 16,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle, color: whiteClr),
+                      child: Center(
+                        child: Icon(
+                          Icons.check_circle,
+                          color: greenClr,
+                          size: 14,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget cardSection() {
     return Container(
       margin: EdgeInsets.only(top: 30),
@@ -119,60 +178,6 @@ class HomePage extends StatelessWidget {
           Text(
             'Rp 12.500',
             style: whiteTS.copyWith(fontSize: 24, fontWeight: semibold),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget profileSection() {
-    return Container(
-      margin: EdgeInsets.only(top: 40),
-      child: Row(
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Howdy,',
-                style: greyTS.copyWith(fontSize: 16, fontWeight: regular),
-              ),
-              Text(
-                'shaynahan',
-                style: blackTS.copyWith(fontWeight: semibold, fontSize: 20),
-              ),
-            ],
-          ),
-          Spacer(),
-          Column(
-            children: [
-              Container(
-                width: 60,
-                height: 60,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/ic_profpic.png'),
-                  ),
-                ),
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: Container(
-                    width: 16,
-                    height: 16,
-                    decoration:
-                        BoxDecoration(shape: BoxShape.circle, color: whiteClr),
-                    child: Center(
-                      child: Icon(
-                        Icons.check_circle,
-                        color: greenClr,
-                        size: 14,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
           ),
         ],
       ),
@@ -226,7 +231,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget activitySection() {
+  Widget activitySection(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 30),
       child: Column(
@@ -245,7 +250,9 @@ class HomePage extends StatelessWidget {
               CustomActivityButton(
                 iconUrl: 'assets/images/ic_download.png',
                 title: 'Top Up',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/top-up');
+                },
               ),
               CustomActivityButton(
                 iconUrl: 'assets/images/ic_send.png',
