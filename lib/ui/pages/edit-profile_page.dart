@@ -59,7 +59,9 @@ class EditProfilePage extends StatelessWidget {
                 CustomFilledButton(
                   title: 'Update Now',
                   width: double.infinity,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/profile-edit-success');
+                  },
                 ),
               ],
             ),
